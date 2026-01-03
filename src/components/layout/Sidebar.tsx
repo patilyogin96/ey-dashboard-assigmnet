@@ -10,7 +10,7 @@ import { SidebarSection } from '../common/Sidebar/SidebarSection';
 
 
 export const Sidebar: React.FC<SidebarProps> = ({ isCollapsed }) => {
-  const [activeItem, setActiveItem] = React.useState('Analytics');
+  const [ setActiveItem] = React.useState('Analytics');
 
   return (
     <aside

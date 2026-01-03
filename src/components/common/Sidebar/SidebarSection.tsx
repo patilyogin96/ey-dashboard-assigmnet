@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type SetStateAction } from 'react';
 import { SectionDivider } from './SectionDivider';
 import { SidebarItem } from './SidebarItem';
 
@@ -6,7 +6,7 @@ import { SidebarItem } from './SidebarItem';
 interface SidebarSectionProps {
   section: any;
   isCollapsed: boolean;
-  onItemClick: (label: string) => void;
+  onItemClick: SetStateAction<any>
 }
 
 export const SidebarSection: React.FC<SidebarSectionProps> = ({
