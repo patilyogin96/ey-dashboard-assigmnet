@@ -29,7 +29,7 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
         "w-full flex items-center gap-3 px-6 py-3 text-base",
         active
           ? "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 border-r-3 border-purple-600"
-          : "text-foreground dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700/50"
+          : "text-foreground dark:text-gray-300 hover:bg-bg-hover/4 dark:hover:bg-gray-700/50 hover:rounded-r-[50px]"
       )}
     >
       {/* <Icon className="w-5 h-5 shrink-0" /> */}
