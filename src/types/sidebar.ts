@@ -1,13 +1,11 @@
-import {
-  type LucideIcon
-} from 'lucide-react';
+
 
 export interface SidebarProps {
   isCollapsed: boolean;
 }
 
 export interface MenuItem {
-  icon: LucideIcon;
+  icon: any;
   label: string;
   badge?: string;
   hasSubmenu?: boolean;
