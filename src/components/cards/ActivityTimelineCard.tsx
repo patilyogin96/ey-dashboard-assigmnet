@@ -4,7 +4,7 @@ import { Card, CardContent } from "../ui/card";
 import activityImg from "@/assets/activityTimeline.svg";
 
 
-const ActivityTimelineCard: React.FC<ActivityTimelineProps> = ({ headerImage, activities }) => {
+const ActivityTimelineCard: React.FC<ActivityTimelineProps> = ({  activities }) => {
   return (
     <Card className="w-full shadow-sm border-gray-100">
       <CardContent className="space-y-5 px-6 pb-6">
