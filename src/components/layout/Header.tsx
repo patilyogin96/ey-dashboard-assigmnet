@@ -1,7 +1,7 @@
 import { Menu, Search, Bell, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import defaultAvatar from "@/assets/defaultAvatar.svg"
 
 interface HeaderProps {
   onToggleSidebar: () => void;
@@ -9,13 +9,14 @@ interface HeaderProps {
   onToggleTheme: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ 
-  onToggleSidebar, 
-  isDarkMode, 
-  onToggleTheme 
+export const Header: React.FC<HeaderProps> = ({
+  onToggleSidebar,
+  isDarkMode,
+  onToggleTheme
 }) => {
+  const isOnline: boolean = true
   return (
-    <header className="h-16 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between px-6">
+    <header className="h-16 bg-white dark:bg-gray-800 flex items-center justify-between px-6">
       <div className="flex items-center gap-4 flex-1">
         <Button
           variant="ghost"
@@ -25,16 +26,16 @@ export const Header: React.FC<HeaderProps> = ({
         >
           <Menu className="h-5 w-5" />
         </Button>
-        
+
         {/* Search Bar */}
         <div className="flex-1 max-w-xl">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-            <Input
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-[#3A3541]" />
+            {/* <Input
               type="text"
               placeholder="Search..."
               className="pl-10 bg-gray-100 dark:bg-gray-700 border-transparent focus-visible:ring-purple-500"
-            />
+            /> */}
           </div>
         </div>
       </div>
@@ -67,12 +68,17 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* User Avatar */}
         <Avatar className="ml-2 cursor-pointer">
-          <AvatarFallback className="bg-gradient-to-br from-green-400 to-blue-500 text-white">
-            JD
+          <AvatarFallback className="">
+            <img src={defaultAvatar} alt='default_avatar' />
           </AvatarFallback>
-          <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-gray-800 rounded-full"></span>
+
+          {isOnline ? <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-gray-800 rounded-full"></span>
+            :           <span className="absolute bottom-0 right-0 w-3 h-3 bg-gray-500 border-2 border-white dark:border-gray-800 rounded-full"></span>
+}
         </Avatar>
       </div>
     </header>
   );
 };
+
+// rounded-full

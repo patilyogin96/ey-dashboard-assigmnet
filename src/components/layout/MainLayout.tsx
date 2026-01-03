@@ -1,7 +1,8 @@
 import React from 'react';
-import SideBar from './SideBar';
+
 import { Header } from './Header';
 import Footer from './Footer';
+import Sidebar from './Sidebar';
 
 
 interface MainLayoutProps {
@@ -14,14 +15,14 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
   return (
     <div className={`flex h-screen ${isDarkMode ? 'dark' : ''}`}>
-      <SideBar isCollapsed={isSidebarCollapsed} />
+      <Sidebar isCollapsed={isSidebarCollapsed} />
       <div className="flex flex-col flex-1 overflow-hidden">
         <Header
           onToggleSidebar={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
           isDarkMode={isDarkMode}
           onToggleTheme={() => setIsDarkMode(!isDarkMode)}
         />
-        <main className="flex-1 overflow-y-auto p-6 bg-gray-50 dark:bg-gray-900">
+        <main className="flex-1 overflow-y-auto p-6 dark:bg-gray-900">
           {children}
         </main>
         <Footer />
