@@ -14,7 +14,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = React.useState(false);
 
   return (
-    <div className={`flex h-screen ${isDarkMode ? 'dark' : ''}`}>
+    <div className={`flex h-screen ${isDarkMode ? 'dark' : 'bg-background'}`}>
       <Sidebar isCollapsed={isSidebarCollapsed} />
       <div className="flex flex-col flex-1 overflow-hidden">
         <Header

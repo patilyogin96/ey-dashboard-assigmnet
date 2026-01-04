@@ -6,7 +6,7 @@ import type {  TransactionCardProps } from "@/types/card.types";
 
 const TransactionCard = ({ transactions }:TransactionCardProps) => {
   return (
-    <Card className="w-full shadow-sm border-gray-100 max-h-128 flex flex-col py-5">
+    <Card className="w-full max-h-120 flex flex-col py-5 shadow-soft rounded-md">
       <CardHeader className="flex flex-row items-center justify-between px-5">
         <CardTitle className="text-xl font-semibold text-foreground">Transactions</CardTitle>
         <Button variant="ghost" size="icon" className="h-8 w-8">
@@ -17,7 +17,9 @@ const TransactionCard = ({ transactions }:TransactionCardProps) => {
         {transactions.map((transaction) => (
           <div key={transaction.id} className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              {/* <TransactionIcon type={transaction.type} bgColor={transaction.bgColor} /> */}
+              {/* <TransactionIcon type={transaction.type} bgColor={transaction.bgColor} /> */
+              }
+              <img src={transaction?.icon} />
               <div>
                 <p className="font-medium text-foreground text-sm ">{transaction.type}</p>
                 <p className=" text-gray-500 mt-0.5 text-xs">{transaction.description}</p>

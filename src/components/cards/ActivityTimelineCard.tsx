@@ -6,7 +6,7 @@ import activityImg from "@/assets/activityTimeline.svg";
 
 const ActivityTimelineCard: React.FC<ActivityTimelineProps> = ({  activities }) => {
   return (
-    <Card className="w-full shadow-sm border-gray-100">
+    <Card className="w-full shadow-soft border-gray-100 rounded-md">
       <CardContent className="space-y-5 px-6 pb-6">
         {/* Header Image */}
         <div className="-mx-6 -mt-6 h-72  relative overflow-hidden rounded-t-md">
@@ -19,10 +19,10 @@ const ActivityTimelineCard: React.FC<ActivityTimelineProps> = ({  activities }) 
 
         {/* Timeline Container */}
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-gray-800 mb-12">Activity Timeline</h1>
+          <h1 className="text-xl font-semibold text-foreground mb-10">Activity Timeline</h1>
 
           {/* Timeline Items */}
-          <div className="space-y-8">
+          <div className="space-y-4">
             {activities.map((activity, index) => (
               <TimelineItem
                 key={index}
