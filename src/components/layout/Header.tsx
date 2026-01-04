@@ -1,7 +1,8 @@
-import { Menu, Search, Bell, Moon, Sun } from 'lucide-react';
+import { Menu, Bell, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import defaultAvatar from "@/assets/defaultAvatar.svg"
+import { ICONS } from '@/assets/sidebar-icons/icons';
 
 interface HeaderProps {
   onToggleSidebar: () => void;
@@ -16,7 +17,7 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const isOnline: boolean = true
   return (
-    <header className="h-16 bg-white dark:bg-gray-800 flex items-center justify-between px-6">
+    <header className="h-16 bg-background dark:bg-gray-800 flex items-center justify-between px-6">
       <div className="flex items-center gap-4 flex-1">
         <Button
           variant="ghost"
@@ -30,12 +31,8 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Search Bar */}
         <div className="flex-1 max-w-xl">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-[#3A3541]" />
-            {/* <Input
-              type="text"
-              placeholder="Search..."
-              className="pl-10 bg-gray-100 dark:bg-gray-700 border-transparent focus-visible:ring-purple-500"
-            /> */}
+            {/* <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-[#3A3541]" /> */}
+            <img src={ICONS.searchIcon} alt='search' />
           </div>
         </div>
       </div>

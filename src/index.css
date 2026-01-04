@@ -44,11 +44,12 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-bg-hover: var(--background-hover);
   --color-gray-500:var(--secondary-foreground);
+  --shadow-soft: 0px 2px 10px rgba(58, 53, 65, 0.1);
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(97.8% 0.015 282);
   --foreground: oklch(0.32 0.02 285);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);

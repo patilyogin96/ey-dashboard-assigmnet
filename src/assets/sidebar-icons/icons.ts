@@ -17,6 +17,15 @@ import PieChartOutline from "./PieChartOutline.svg";
 import StarBorder from "./StarBorder.svg";
 import Vector from "./Vector.svg";
 import Vector1 from "./Vector1.svg";
+import Invoice from "../pdf.svg"
+import DefaultAvatar from '../../assets/defaultAvatar.svg'
+import SearchIcon from '../Search.svg'
+import Paypal from '../transactions-icons/paypal.svg'
+import Ccard from '../transactions-icons/ccr.svg';
+import MasterCard from '../transactions-icons/mscard.svg';
+import Wallet from '../transactions-icons/wllet.svg';
+import Transfer from '../transactions-icons/transfer.svg';
+
 
 export const ICONS = {
 
@@ -39,6 +48,14 @@ export const ICONS = {
   starBorder: StarBorder,
   user: Vector,
   userAlt: Vector1,
+  invoice:Invoice,
+  defaultAvatar:DefaultAvatar,
+  searchIcon: SearchIcon,
+  paypal : Paypal,
+  creditcard: Ccard,
+  mastercard:MasterCard,
+  wallet: Wallet,
+  transfer:Transfer
 } as const;
 
 export type IconName = keyof typeof ICONS;

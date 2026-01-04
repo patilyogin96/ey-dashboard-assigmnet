@@ -1,12 +1,13 @@
+import { ICONS } from "@/assets/sidebar-icons/icons";
 import type { Activity } from "@/types/card.types";
 
 export const TRANSACTIONS_DATA = [
-  { id: 1, type: 'Paypal', description: 'Received Money', amount: 24820, isPositive: true, bgColor: 'bg-red-50' },
-  { id: 2, type: 'Credit Card', description: 'Digital Ocean', amount: 1250, isPositive: false, bgColor: 'bg-green-50' },
-  { id: 3, type: 'Mastercard', description: 'Netflix', amount: 99, isPositive: false, bgColor: 'bg-yellow-50' },
-  { id: 4, type: 'Wallet', description: "Mac'D", amount: 82, isPositive: false, bgColor: 'bg-purple-50' },
-  { id: 5, type: 'Transfer', description: 'Refund', amount: 8934, isPositive: true, bgColor: 'bg-blue-50' },
-  { id: 6, type: 'Wallet', description: 'Buy Apple Watch', amount: 399, isPositive: false, bgColor: 'bg-purple-50' },
+  { id: 1, type: 'Paypal', description: 'Received Money', amount: 24820, isPositive: true, bgColor: 'bg-red-50' , icon: ICONS.paypal},
+  { id: 2, type: 'Credit Card', description: 'Digital Ocean', amount: 1250, isPositive: false, bgColor: 'bg-green-50', icon: ICONS.creditcard },
+  { id: 3, type: 'Mastercard', description: 'Netflix', amount: 99, isPositive: false, bgColor: 'bg-yellow-50', icon: ICONS.mastercard },
+  { id: 4, type: 'Wallet', description: "Mac'D", amount: 82, isPositive: false, bgColor: 'bg-purple-50' ,icon: ICONS.wallet},
+  { id: 5, type: 'Transfer', description: 'Refund', amount: 8934, isPositive: true, bgColor: 'bg-blue-50', icon: ICONS.transfer },
+  { id: 6, type: 'Wallet', description: 'Buy Apple Watch', amount: 399, isPositive: false, bgColor: 'bg-purple-50',icon: ICONS.wallet },
 ];
 
 export const PLAN_DATA = {
@@ -36,16 +37,20 @@ export const SAMPLE_ACTIVITIES: Activity[] = [
       title: '8 Invoices have been paid',
       date: 'Wednesday',
       description: 'Invoices have been paid to the company.',
-      attachment: 'invoice.pdf'
+      metaData:{
+          name: 'invoice.pdf',
+          attachment:ICONS.invoice
+
+      }
     },
     {
       dotColor: 'purple',
       title: 'Create a new project for client 😎',
       date: 'April, 18',
       description: 'Invoices have been paid to the company.',
-      client: {
-        name: 'John Doe (Client)',
-        avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=John'
+       metaData:{
+          name: 'John Doe (Client)',
+          attachment:ICONS.defaultAvatar
       }
     },
     {

@@ -6,6 +6,7 @@ export interface Transaction {
   amount: number;
   isPositive: boolean;
   bgColor: string;
+  icon:string
 }
 
 export interface TransactionCardProps {
@@ -110,6 +111,7 @@ export interface Activity {
   description: string;
   attachment?: string;
   client?: Client;
+  metaData?:IMetaData
 }
 
 export interface ActivityTimelineProps {
@@ -120,4 +122,9 @@ export interface ActivityTimelineProps {
 export interface TimelineItemProps {
   activity: Activity;
   isLast: boolean;
+}
+
+interface IMetaData{
+  attachment?:string
+  name?:string
 }

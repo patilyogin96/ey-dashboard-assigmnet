@@ -1,6 +1,5 @@
 
 import type { Activity, TimelineItemProps } from '@/types/card.types';
-import { FileText } from 'lucide-react';
 
 
 
@@ -22,38 +21,34 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ activity, isLast }) => {
       </div>
 
       {/* Content */}
-      <div className="flex-1 pb-8">
+      <div className="flex-1 pb-4">
         {/* Header with Title and Date */}
-        <div className="flex items-start justify-between mb-3">
-          <h3 className="text-xl font-semibold text-gray-800">
+        <div className="flex items-start justify-between mb-2 relative bottom-1.5">
+          <h3 className="text-base font-semibold text-foreground">
             {activity.title}
           </h3>
-          <span className="text-gray-400 text-sm whitespace-nowrap ml-4">
+          <span className="text-gray-500 text-xs whitespace-nowrap ml-4">
             {activity.date}
           </span>
         </div>
 
         {/* Description */}
-        <p className="text-gray-600 mb-4">{activity.description}</p>
+        <p className="text-gray-600 mb-4 text-sm">{activity.description}</p>
 
-        {/* Attachments/Additional Content */}
-        {activity.attachment && (
-          <div className="flex items-center gap-3 text-gray-700">
-            <FileText className="w-5 h-5 text-red-500" />
-            <span className="font-medium">{activity.attachment}</span>
-          </div>
-        )}
+        {
+        activity?.metaData && 
+        <>
 
-        {activity.client && (
           <div className="flex items-center gap-3">
             <img 
-              src={activity.client.avatar} 
-              alt={activity.client.name}
-              className="w-10 h-10 rounded-full"
+              src={activity.metaData?.attachment} 
+              alt={activity.metaData?.name}
+              className="w-7 h-7"
             />
-            <span className="text-gray-700 font-medium">{activity.client.name}</span>
+            <span className="text-gray-700 font-medium text-sm">{activity.metaData?.name}</span>
           </div>
-        )}
+        </>
+        } 
       </div>
     </div>
   );

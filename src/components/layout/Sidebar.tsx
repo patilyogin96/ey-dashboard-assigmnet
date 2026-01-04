@@ -15,7 +15,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isCollapsed }) => {
   return (
     <aside
       className={cn(
-        "bg-white dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 flex flex-col text-base text-foreground",
+        "bg-background dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 flex flex-col text-base text-foreground",
         isCollapsed ? "w-20" : "w-64"
       )}
     >
