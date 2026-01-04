@@ -11,7 +11,7 @@ const MeetingScheduleCard = ({ meetings }: MeetingScheduleCardProps) => {
       
       {/* Overlay */}
       {isComingSoon && (
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center rounded-md
                         bg-white/60 backdrop-blur-sm">
           <p className="text-lg font-semibold text-gray-700">
             Coming Soon
